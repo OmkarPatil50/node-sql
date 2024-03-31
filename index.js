@@ -4,10 +4,10 @@ import express from 'express'
 
 const connection = mysql2.createConnection(
     {
-        host: 'localhost',
-        database: 'assignment',
-        user: 'root',
-        password: 'Omkar@123'
+        host: process.env.DB_HOST ,
+        user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DBNAME,
     }
 )
 
