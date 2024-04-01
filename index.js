@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import mysql2 from 'mysql2'
 import express from 'express'
+import cors from 'cors';
 
 
 const connection = mysql2.createConnection(
@@ -12,11 +13,10 @@ const connection = mysql2.createConnection(
     }
 )
 
-console.log(process.env.DB_HOST, process.env.DB_USERNAME, process.env.DB_PASSWORD, process.env.DB_DBNAME)
-
-
 const app = express()
 const PORT = process.env.PORT || 3001
+
+app.use(cors());
 
 app.listen(PORT, () => {
     console.log('Server listening on port', PORT)
