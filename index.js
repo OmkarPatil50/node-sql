@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import mysql2 from 'mysql2'
 import express from 'express'
 
@@ -9,8 +10,7 @@ const connection = mysql2.createConnection(
         password: process.env.DB_PASSWORD,
         database: process.env.DB_DBNAME,
     }
-)
-
+) 
 
 const app = express()
 const PORT = process.env.PORT || 3001
