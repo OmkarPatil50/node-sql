@@ -10,7 +10,10 @@ const connection = mysql2.createConnection(
         password: process.env.DB_PASSWORD,
         database: process.env.DB_DBNAME,
     }
-) 
+)
+
+console.log(process.env.DB_HOST, process.env.DB_USERNAME, process.env.DB_PASSWORD, process.env.DB_DBNAME)
+
 
 const app = express()
 const PORT = process.env.PORT || 3001
